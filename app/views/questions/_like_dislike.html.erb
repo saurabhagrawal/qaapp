@@ -1,0 +1,4 @@
+<div id = "like_dislike">
+  <%= question.likes.size %><%= ' ' %><%= link_to 'Like', up_vote_question_path(question) %><%= ' ' %>
+  <%= question.dislikes.size %><%= ' ' %><%= link_to 'Unlike', down_vote_question_path(question) %>
+</div>

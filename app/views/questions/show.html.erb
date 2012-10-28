@@ -14,6 +14,9 @@
     <span class = "last_activity_time">
       <%= @question.last_activity_time.strftime("Last Activity Time is %d/%m/%Y %I:%M %p") %>
     </span>
+    <span class = 'vote'>
+      <%= render :partial => 'questions/like_dislike', :locals => {:question => @question} %>
+    </span>
     <span class = "last_edit_time">
       <%= @question.last_edit_time.strftime("Last Edit Time is %d/%m/%Y %I:%M %p") %>
     </span>
@@ -21,7 +24,7 @@
 </div>
 <div id = "border"></div>
 <div id = 'description_question' >
-  <%= @question.description %>
+  <%= @question.description %><br/>
 </div>
 
 <div id="answer">

@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /questions
   # GET /questions.json
   def index
@@ -80,5 +81,17 @@ class QuestionsController < ApplicationController
       format.html { redirect_to questions_url }
       format.json { head :no_content }
     end
+  end
+
+  def up_vote
+    @question = Question.find(params[:id])
+    @question.liked_by current_user
+    redirect_to @question
+  end
+
+  def down_vote
+    @question = Question.find(params[:id])
+    @question.downvote_from current_user
+    redirect_to @question
   end
 end
