@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+
+jQuery.ajaxSetup({
+	'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
+
+jQuery.fn.submitWithAjax = function() {
+	this.submit(function(){
+		jQuery.question(jQuery(this).attr("action"), jQuery(this).serialize(), null, "script");
+		return false;
+	})
+};
+
+jQuery(document).ready(function() {
+	jQuery("#new_answer").submitWithAjax();
+})

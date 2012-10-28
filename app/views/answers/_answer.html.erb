@@ -1,0 +1,15 @@
+<div id = 'all_answers' >
+	<div class = 'answers' >
+		<span class = "answered_by" >
+	    <%= link_to answer.user.name, edit_user_registration_path %> <%= 'answered:' %>
+	  </span>
+	  <span class = "destroy_comment" >
+	    <% if answer.user_id == current_user.id %>
+	  		<%= link_to 'Delete Comment', [answer.question, answer], :confirm => 'Are you sure?', :method => :delete %>
+	  	<% end %>
+	  </span>
+	</div>
+	<div id = 'description_answer' >
+  	<%= answer.description %>
+	</div>
+</div>

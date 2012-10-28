@@ -1,3 +1,68 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#question{
+	min-height: 40px;
+	margin:5px;
+	padding:5px;
+}
+
+#question #heading .title {
+	float:left;
+	width:80%;
+	font-size: 18px;
+}
+
+#question #heading .edit_destroy, #question #heading .asked_by{
+	float: right;
+}
+
+#question #time .last_activity_time{
+	float: left;
+	margin-bottom: 10px;
+}
+
+#question #time .last_edit_time{
+	float: right;
+	margin-bottom: 10px;
+}
+
+#border{
+	min-height: 2px;
+	width:100%;
+	background-color: #FFFFFF;
+}
+
+#description_question{
+	margin: 10px;
+	padding:10px;
+}
+
+.form-inputs .textfield_width{
+	width:80%;
+}
+
+#answer .title {
+	font-size: 18px;
+}
+
+#all_answers{
+	min-height: 20px;
+	margin:5px;
+	padding:5px;
+}
+
+#answer #all_answers .answers .answered_by{
+	float:left;
+	width:80%;
+}
+
+#answer #all_answers .answers .destroy_comment{
+	float: right;
+}
+
+#answer #all_answers #description_answer{
+	margin-top: 10px;
+	padding-top:10px;	
+}

@@ -1,0 +1,30 @@
+<h2>All Questions</h2>
+
+<% @questions.each do |question| %>
+  <div id = "question">
+    <div id = "heading">
+      <span class = "title" >
+        <%= link_to question.title, question %>
+      </span>
+      <span class = "edit_destroy" >
+        <% if question.user_id == current_user.id %>
+          <%= link_to 'Edit', edit_question_path(question) %>
+          <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </span>
+    </div>
+    <br/>
+    <div id = "time" >
+      <span class = "last_activity_time">
+        <%= question.last_activity_time.strftime("Last Activity Time is %d/%m/%Y %I:%M %p") %>
+      </span>
+      <span class = "last_edit_time">
+        <%= question.last_edit_time.strftime("Last Edit Time is %d/%m/%Y %I:%M %p") %>
+      </span>
+    </div>
+  </div>
+<% end %>
+
+<br />
+
+<h4><%= link_to 'Ask Question', new_question_path %><h4>

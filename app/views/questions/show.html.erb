@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div id = "question">
+  <div id = "heading">
+    <span class = "title" >
+      <%= @question.title %>
+    </span>
+    <span class = "asked_by" >
+      <%= 'Asked by' %> <%= link_to User.find(@question.user_id).name, edit_user_registration_path %>
+    </span>
+  </div>
+  <br/>
+  <div id = "time" >
+    <span class = "last_activity_time">
+      <%= @question.last_activity_time.strftime("Last Activity Time is %d/%m/%Y %I:%M %p") %>
+    </span>
+    <span class = "last_edit_time">
+      <%= @question.last_edit_time.strftime("Last Edit Time is %d/%m/%Y %I:%M %p") %>
+    </span>
+  </div>
+</div>
+<div id = "border"></div>
+<div id = 'description_question' >
+  <%= @question.description %>
+</div>
+
+<div id="answer">
+  <div class = 'title'> <%= 'Answers:' %> </div>
+  <div id = "border"></div>
+  <%= render @question.answers %>
+</div>
+<h4>Please answer:</h4>
+  <%= render "answers/form" %>
+
+<%= link_to 'Back', questions_path %>
