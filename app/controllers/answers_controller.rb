@@ -67,6 +67,7 @@ class AnswersController < ApplicationController
   def destroy
     @question = Question.find(params[:question_id])
     @answer = @question.answers.find(params[:id])
+    authorize! :destroy, @answer
     @answer.destroy
     redirect_to question_path(@question)
   end

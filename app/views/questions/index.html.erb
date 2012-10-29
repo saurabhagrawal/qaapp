@@ -7,7 +7,7 @@
         <%= link_to question.title, question %>
       </span>
       <span class = "edit_destroy" >
-        <% if question.user_id == current_user.id %>
+        <% if can?(:edit, question) %>
           <%= link_to 'Edit', edit_question_path(question) %>
           <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>

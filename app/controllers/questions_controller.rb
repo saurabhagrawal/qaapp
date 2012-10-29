@@ -36,6 +36,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
+    authorize! :edit, @question
   end
 
   # POST /questions
@@ -75,6 +76,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1.json
   def destroy
     @question = Question.find(params[:id])
+    authorize! :destroy, @question
     @question.destroy
 
     respond_to do |format|
