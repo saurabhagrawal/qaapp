@@ -1,7 +1,7 @@
 <div id = 'all_answers' >
 	<div class = 'answers' >
 		<span class = "answered_by" >
-	    <%= link_to answer.user.name, edit_user_registration_path %> <%= 'answered:' %>
+	    <%= answer.user.name %> <%= 'answered:' %>
 	  </span>
 	  <span class = "destroy_comment" >
 	    <% if can?(:destroy, answer) %>

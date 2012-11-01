@@ -26,7 +26,3 @@ jQuery.fn.submitWithAjax = function() {
 		return false;
 	})
 };
-
-jQuery(document).ready(function() {
-	jQuery("#new_answer").submitWithAjax();
-})

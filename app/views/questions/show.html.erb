@@ -6,7 +6,7 @@
       <%= @question.title %>
     </span>
     <span class = "asked_by" >
-      <%= 'Asked by' %> <%= link_to User.find(@question.user_id).name, edit_user_registration_path %>
+      <%= 'Asked by' %> <%= link_to User.find(@question.user_id).name, User.find(@question.user_id) %>
     </span>
   </div>
   <br/>
