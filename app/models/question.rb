@@ -9,4 +9,13 @@ class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers
   default_scope :order => 'questions.last_activity_time DESC'
+
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
+  def self.search(params)
+    tire.search(load: true) do
+      query { string params[:query], default_operator: "AND" } if params[:query].present?
+    end
+  end
 end

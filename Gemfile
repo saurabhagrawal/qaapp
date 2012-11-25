@@ -23,6 +23,7 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'acts_as_votable'
+gem 'tire'
 
 group :production do
   gem 'pg'
